@@ -1,0 +1,30 @@
+{
+  "SecurityGroups": [
+    {
+      "GroupId": "sg-example-open",
+      "IpPermissions": [
+        {
+          "IpProtocol": "tcp",
+          "FromPort": 22,
+          "ToPort": 22,
+          "IpRanges": [{"CidrIp": "0.0.0.0/0"}],
+          "Ipv6Ranges": []
+        }
+      ],
+      "IpPermissionsEgress": []
+    },
+    {
+      "GroupId": "sg-example-limited",
+      "IpPermissions": [
+        {
+          "IpProtocol": "tcp",
+          "FromPort": 3389,
+          "ToPort": 3389,
+          "IpRanges": [{"CidrIp": "10.0.0.0/24"}],
+          "Ipv6Ranges": []
+        }
+      ],
+      "IpPermissionsEgress": []
+    }
+  ]
+}
